@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    <h1>Victory!!!</h1>
+    {% if request.user.is_authenticated %}
+    Добро пожаловать, {{ user.username }} | <a href="{% url 'logout' %}">Logout</a>
+    {% else %}
+    <a href="{% url 'register' %}">register</a>
+    <a href="{% url 'login' %}">Login</a>
+    {% endif %}
+
+</body>
+</html>
